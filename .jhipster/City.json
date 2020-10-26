@@ -1,8 +1,19 @@
 {
-  "name": "Country",
+  "name": "City",
   "fields": [
     {
-      "fieldName": "countryName",
+      "fieldName": "cityName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "stateName",
       "fieldType": "String",
       "fieldValidateRules": [
         "required",
@@ -15,22 +26,16 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "city",
-      "otherEntityRelationshipName": "country",
-      "relationshipName": "cities"
-    },
-    {
       "relationshipType": "many-to-one",
-      "otherEntityName": "region",
-      "otherEntityRelationshipName": "countries",
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "cities",
       "relationshipValidateRules": "required",
-      "relationshipName": "region",
-      "otherEntityField": "regionName"
+      "relationshipName": "country",
+      "otherEntityField": "countryName"
     }
   ],
-  "changelogDate": "20201025111527",
-  "entityTableName": "country",
+  "changelogDate": "20201026132944",
+  "entityTableName": "city",
   "dto": "no",
   "pagination": "no",
   "service": "no",

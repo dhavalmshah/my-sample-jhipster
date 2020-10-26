@@ -1,28 +1,27 @@
 {
-  "name": "Region",
+  "name": "ProductAlias",
   "fields": [
     {
-      "fieldName": "regionName",
+      "fieldName": "name",
       "fieldType": "String",
       "fieldValidateRules": [
         "required",
-        "pattern",
         "maxlength"
       ],
-      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
       "fieldValidateRulesMaxlength": "255"
     }
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "country",
-      "otherEntityRelationshipName": "region",
-      "relationshipName": "countries"
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "aliases",
+      "relationshipName": "product",
+      "otherEntityField": "name"
     }
   ],
-  "changelogDate": "20201025111427",
-  "entityTableName": "region",
+  "changelogDate": "20201026133844",
+  "entityTableName": "product_alias",
   "dto": "no",
   "pagination": "no",
   "service": "no",

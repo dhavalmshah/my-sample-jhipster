@@ -2,38 +2,58 @@
   "name": "Location",
   "fields": [
     {
-      "fieldName": "streetAddress",
-      "fieldType": "String"
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesMaxlength": "255"
     },
     {
-      "fieldName": "postalCode",
-      "fieldType": "String"
+      "fieldName": "panNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
     },
     {
-      "fieldName": "city",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "stateProvince",
-      "fieldType": "String"
+      "fieldName": "gstNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
     }
   ],
   "relationships": [
     {
       "relationshipType": "one-to-one",
-      "otherEntityName": "country",
+      "otherEntityName": "contact",
       "otherEntityRelationshipName": "location",
-      "relationshipName": "country",
+      "relationshipValidateRules": "required",
+      "relationshipName": "contact",
       "otherEntityField": "id",
       "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "counterParty",
+      "otherEntityRelationshipName": "locations",
+      "relationshipName": "counterParty",
+      "otherEntityField": "name"
     }
   ],
   "changelogDate": "20201025111627",
-  "javadoc": "not an ignored comment",
   "entityTableName": "location",
   "dto": "no",
   "pagination": "no",
-  "service": "serviceImpl",
+  "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,
   "readOnly": false,
