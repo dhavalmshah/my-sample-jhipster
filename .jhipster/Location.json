@@ -1,0 +1,63 @@
+{
+  "name": "Location",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "panNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "gstNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "location",
+      "relationshipValidateRules": "required",
+      "relationshipName": "contact",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "counterParty",
+      "otherEntityRelationshipName": "locations",
+      "relationshipName": "counterParty",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201026134520",
+  "entityTableName": "location",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

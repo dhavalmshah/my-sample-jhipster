@@ -1,0 +1,43 @@
+{
+  "name": "Country",
+  "fields": [
+    {
+      "fieldName": "countryName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "city",
+      "otherEntityRelationshipName": "country",
+      "relationshipName": "cities"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "region",
+      "otherEntityRelationshipName": "countries",
+      "relationshipValidateRules": "required",
+      "relationshipName": "region",
+      "otherEntityField": "regionName"
+    }
+  ],
+  "changelogDate": "20201026133920",
+  "entityTableName": "country",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
