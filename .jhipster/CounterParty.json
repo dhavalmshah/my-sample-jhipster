@@ -1,0 +1,49 @@
+{
+  "name": "CounterParty",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "CounterPartyType",
+      "fieldValues": "CUSTOMER,SELLER,BOTH,SISCONCERN,TRANSPORTER,BANK,AGENCY,CLEARING,SHIPPING,PACKING,SERVICE,OTHER"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "counterParty",
+      "relationshipValidateRules": "required",
+      "relationshipName": "locations"
+    }
+  ],
+  "changelogDate": "20201026134840",
+  "entityTableName": "counter_party",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
