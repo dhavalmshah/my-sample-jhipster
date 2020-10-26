@@ -1,0 +1,25 @@
+export const enum CounterPartyType {
+  CUSTOMER = 'CUSTOMER',
+
+  SELLER = 'SELLER',
+
+  BOTH = 'BOTH',
+
+  SISCONCERN = 'SISCONCERN',
+
+  TRANSPORTER = 'TRANSPORTER',
+
+  BANK = 'BANK',
+
+  AGENCY = 'AGENCY',
+
+  CLEARING = 'CLEARING',
+
+  SHIPPING = 'SHIPPING',
+
+  PACKING = 'PACKING',
+
+  SERVICE = 'SERVICE',
+
+  OTHER = 'OTHER',
+}

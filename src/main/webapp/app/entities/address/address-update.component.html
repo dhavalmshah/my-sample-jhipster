@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-address-heading" jhiTranslate="mySampleApp.address.home.createOrEditLabel">Create or edit a Address</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.address.buildingAddress" for="field_buildingAddress">Building Address</label>
+                    <input type="text" class="form-control" name="buildingAddress" id="field_buildingAddress"
+                           formControlName="buildingAddress"/>
+                    <div *ngIf="editForm.get('buildingAddress')!.invalid && (editForm.get('buildingAddress')!.dirty || editForm.get('buildingAddress')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('buildingAddress')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.address.streetAddress" for="field_streetAddress">Street Address</label>
+                    <input type="text" class="form-control" name="streetAddress" id="field_streetAddress"
+                           formControlName="streetAddress"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.address.postalCode" for="field_postalCode">Postal Code</label>
+                    <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                           formControlName="postalCode"/>
+                    <div *ngIf="editForm.get('postalCode')!.invalid && (editForm.get('postalCode')!.dirty || editForm.get('postalCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('postalCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.address.city" for="field_city">City</label>
+                    <select class="form-control" id="field_city" name="city" formControlName="city">
+                        <option *ngIf="!editForm.get('city')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="cityOption.id === editForm.get('city')!.value?.id ? editForm.get('city')!.value : cityOption" *ngFor="let cityOption of cities; trackBy: trackById">{{ cityOption.displayString }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('city')!.invalid && (editForm.get('city')!.dirty || editForm.get('city')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('city')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
