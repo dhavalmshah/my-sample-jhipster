@@ -39,7 +39,7 @@ entity PhoneNumber {
 /** Email Address */
 entity EmailAddress {
 	type ContactType required,
-	emailAddress String required maxlength(255) pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.(?:[a-zA-Z0-9-]+)*$/)
+	emailAddress String required maxlength(255) pattern(/^[a-zA-Z0-9\.\!\#\$\%\&\*\+\/\=\?\^\_\`\{\|\}\~\-]+@[a-zA-Z0-9-]+\.(?:[a-zA-Z0-9-]+)*$/)
 }
 
 //uni-drectional
@@ -123,9 +123,11 @@ relationship OneToMany {
 }
 
 entity Unit {
-	name String required maxlength(10),
+    name String required maxlength(10),
     quantityType QuantityType,
     fullName String required maxlength(50),
     baseUnitMultiplier Integer required,
     isSmallerThanBase Boolean required /** If the unit is smaller than base unit then check this flag */
 }
+
+service all with serviceImpl
