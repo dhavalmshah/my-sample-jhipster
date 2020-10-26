@@ -20,8 +20,8 @@ export class CityUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    cityName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d$')]],
-    stateName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d$')]],
+    cityName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
+    stateName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
     country: [null, Validators.required],
   });
 

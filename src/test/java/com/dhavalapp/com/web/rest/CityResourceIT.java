@@ -31,11 +31,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class CityResourceIT {
 
-    private static final String DEFAULT_CITY_NAME = "Enuau1";
-    private static final String UPDATED_CITY_NAME = "Rqvz5";
+    private static final String DEFAULT_CITY_NAME = "Ff2254";
+    private static final String UPDATED_CITY_NAME = "Ksotxtl8";
 
-    private static final String DEFAULT_STATE_NAME = "Jn7";
-    private static final String UPDATED_STATE_NAME = "Xhqsf1";
+    private static final String DEFAULT_STATE_NAME = "Tai18";
+    private static final String UPDATED_STATE_NAME = "Xetsdxx11235";
 
     @Autowired
     private CityRepository cityRepository;

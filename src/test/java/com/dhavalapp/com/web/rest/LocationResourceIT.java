@@ -31,8 +31,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class LocationResourceIT {
 
-    private static final String DEFAULT_NAME = "Hy9";
-    private static final String UPDATED_NAME = "Ljjjqm3";
+    private static final String DEFAULT_NAME = "Wpcy4532";
+    private static final String UPDATED_NAME = "Aw1";
 
     private static final String DEFAULT_PAN_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_PAN_NUMBER = "BBBBBBBBBB";

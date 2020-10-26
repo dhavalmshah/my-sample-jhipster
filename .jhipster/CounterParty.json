@@ -22,7 +22,7 @@
         "pattern",
         "maxlength"
       ],
-      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d$",
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d*$",
       "fieldValidateRulesMaxlength": "65535"
     }
   ],

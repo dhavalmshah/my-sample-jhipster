@@ -36,7 +36,7 @@ public class CounterParty implements Serializable {
     private CounterPartyType type;
 
     @Size(max = 65535)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "notes", length = 65535)
     private String notes;
 

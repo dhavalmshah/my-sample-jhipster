@@ -21,10 +21,10 @@ export class ContactUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    firstName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d$')]],
-    lastName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d$')]],
-    designation: [null, [Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d$')]],
-    notes: [null, [Validators.maxLength(65535), Validators.pattern('^[A-Z][a-z]+\\d$')]],
+    firstName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
+    lastName: [null, [Validators.required, Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
+    designation: [null, [Validators.maxLength(255), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
+    notes: [null, [Validators.maxLength(65535), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
     address: [null, Validators.required],
   });
 

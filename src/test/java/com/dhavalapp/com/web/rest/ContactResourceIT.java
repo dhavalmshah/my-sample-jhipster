@@ -31,17 +31,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class ContactResourceIT {
 
-    private static final String DEFAULT_FIRST_NAME = "Iswermd1";
-    private static final String UPDATED_FIRST_NAME = "Hgnqze3";
+    private static final String DEFAULT_FIRST_NAME = "Lngetq23507";
+    private static final String UPDATED_FIRST_NAME = "Xdxonn672";
 
-    private static final String DEFAULT_LAST_NAME = "Kqgh6";
-    private static final String UPDATED_LAST_NAME = "Pmb7";
+    private static final String DEFAULT_LAST_NAME = "Mpgmmn109";
+    private static final String UPDATED_LAST_NAME = "Odc3";
 
-    private static final String DEFAULT_DESIGNATION = "Imqyjms5";
-    private static final String UPDATED_DESIGNATION = "Wn8";
+    private static final String DEFAULT_DESIGNATION = "Vbarao";
+    private static final String UPDATED_DESIGNATION = "Mjkj";
 
-    private static final String DEFAULT_NOTES = "Fnajxh1";
-    private static final String UPDATED_NOTES = "Tqepb4";
+    private static final String DEFAULT_NOTES = "Sgbm311";
+    private static final String UPDATED_NOTES = "Yf26345";
 
     @Autowired
     private ContactRepository contactRepository;

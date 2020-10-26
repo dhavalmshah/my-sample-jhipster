@@ -31,8 +31,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class CountryResourceIT {
 
-    private static final String DEFAULT_COUNTRY_NAME = "Yfwjjb0";
-    private static final String UPDATED_COUNTRY_NAME = "Kdoomo5";
+    private static final String DEFAULT_COUNTRY_NAME = "Azk0263";
+    private static final String UPDATED_COUNTRY_NAME = "Gcmiopq827";
 
     @Autowired
     private CountryRepository countryRepository;

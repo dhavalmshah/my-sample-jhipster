@@ -19,7 +19,7 @@ export class CounterPartyUpdateComponent implements OnInit {
     id: [],
     name: [null, [Validators.required, Validators.maxLength(255)]],
     type: [],
-    notes: [null, [Validators.maxLength(65535), Validators.pattern('^[A-Z][a-z]+\\d$')]],
+    notes: [null, [Validators.maxLength(65535), Validators.pattern('^[A-Z][a-z]+\\d*$')]],
   });
 
   constructor(protected counterPartyService: CounterPartyService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}

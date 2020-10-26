@@ -26,23 +26,23 @@ public class Contact implements Serializable {
 
     @NotNull
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "first_name", length = 255, nullable = false)
     private String firstName;
 
     @NotNull
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "last_name", length = 255, nullable = false)
     private String lastName;
 
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "designation", length = 255)
     private String designation;
 
     @Size(max = 65535)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "notes", length = 65535)
     private String notes;
 

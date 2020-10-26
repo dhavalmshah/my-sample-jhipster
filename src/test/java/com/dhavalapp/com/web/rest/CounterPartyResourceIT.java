@@ -38,8 +38,8 @@ public class CounterPartyResourceIT {
     private static final CounterPartyType DEFAULT_TYPE = CounterPartyType.CUSTOMER;
     private static final CounterPartyType UPDATED_TYPE = CounterPartyType.SELLER;
 
-    private static final String DEFAULT_NOTES = "Wcugfyh5";
-    private static final String UPDATED_NOTES = "Pdi0";
+    private static final String DEFAULT_NOTES = "Muwlywu";
+    private static final String UPDATED_NOTES = "Fvyipko";
 
     @Autowired
     private CounterPartyRepository counterPartyRepository;

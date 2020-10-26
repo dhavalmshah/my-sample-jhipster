@@ -30,8 +30,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class RegionResourceIT {
 
-    private static final String DEFAULT_REGION_NAME = "Narr1";
-    private static final String UPDATED_REGION_NAME = "Whhnya8";
+    private static final String DEFAULT_REGION_NAME = "Odmnu02116";
+    private static final String UPDATED_REGION_NAME = "Nia58";
 
     @Autowired
     private RegionRepository regionRepository;

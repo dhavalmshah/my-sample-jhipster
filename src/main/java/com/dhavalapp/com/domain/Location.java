@@ -25,7 +25,7 @@ public class Location implements Serializable {
 
     @NotNull
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 

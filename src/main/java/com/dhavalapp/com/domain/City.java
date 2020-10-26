@@ -25,13 +25,13 @@ public class City implements Serializable {
 
     @NotNull
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "city_name", length = 255, nullable = false)
     private String cityName;
 
     @NotNull
     @Size(max = 255)
-    @Pattern(regexp = "^[A-Z][a-z]+\\d$")
+    @Pattern(regexp = "^[A-Z][a-z]+\\d*$")
     @Column(name = "state_name", length = 255, nullable = false)
     private String stateName;
 
