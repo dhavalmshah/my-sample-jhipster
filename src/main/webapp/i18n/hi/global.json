@@ -7,6 +7,19 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "एंटिटीज़",
+        "region": "Region",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "phoneNumber": "Phone Number",
+        "emailAddress": "Email Address",
+        "contact": "Contact",
+        "location": "Location",
+        "counterParty": "Counter Party",
+        "productType": "Product Type",
+        "product": "Product",
+        "productAlias": "Product Alias",
+        "unit": "Unit",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

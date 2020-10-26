@@ -1,0 +1,12 @@
+{
+  "mySampleApp": {
+    "ProductCategory": {
+      "null": "",
+      "RAWMATERIAL": "RAWMATERIAL",
+      "FINISHEDGOODS": "FINISHEDGOODS",
+      "CONSUMABLE": "CONSUMABLE",
+      "PACKINGMATERIAL": "PACKINGMATERIAL",
+      "OFFICESUPPLIES": "OFFICESUPPLIES"
+    }
+  }
+}

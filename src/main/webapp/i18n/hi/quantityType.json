@@ -1,0 +1,13 @@
+{
+  "mySampleApp": {
+    "QuantityType": {
+      "null": "",
+      "VOLUME": "VOLUME",
+      "WEIGHT": "WEIGHT",
+      "LENGTH": "LENGTH",
+      "TEMPERATURE": "TEMPERATURE",
+      "PIECES": "PIECES",
+      "OTHER": "OTHER"
+    }
+  }
+}
