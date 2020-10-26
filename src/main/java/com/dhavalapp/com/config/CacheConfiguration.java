@@ -47,6 +47,26 @@ public class CacheConfiguration {
             createCache(cm, com.dhavalapp.com.domain.User.class.getName());
             createCache(cm, com.dhavalapp.com.domain.Authority.class.getName());
             createCache(cm, com.dhavalapp.com.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.dhavalapp.com.domain.Region.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Region.class.getName() + ".countries");
+            createCache(cm, com.dhavalapp.com.domain.Country.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Country.class.getName() + ".cities");
+            createCache(cm, com.dhavalapp.com.domain.City.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Address.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.PhoneNumber.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.EmailAddress.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName() + ".phones");
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName() + ".emails");
+            createCache(cm, com.dhavalapp.com.domain.Location.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.CounterParty.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.CounterParty.class.getName() + ".locations");
+            createCache(cm, com.dhavalapp.com.domain.ProductType.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.ProductType.class.getName() + ".products");
+            createCache(cm, com.dhavalapp.com.domain.Product.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Product.class.getName() + ".aliases");
+            createCache(cm, com.dhavalapp.com.domain.ProductAlias.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Unit.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
