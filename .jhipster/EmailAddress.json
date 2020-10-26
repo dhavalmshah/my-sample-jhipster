@@ -18,7 +18,7 @@
         "pattern"
       ],
       "fieldValidateRulesMaxlength": "255",
-      "fieldValidateRulesPattern": "^[a-zA-Z0-9.!#$%&\\\\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\\.(?:[a-zA-Z0-9-]+)*$\\"
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9\\.\\!\\#\\$\\%\\&\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+@[a-zA-Z0-9-]+\\.(?:[a-zA-Z0-9-]+)*$"
     }
   ],
   "relationships": [
@@ -35,7 +35,7 @@
   "entityTableName": "email_address",
   "dto": "no",
   "pagination": "no",
-  "service": "no",
+  "service": "serviceImpl",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,
   "readOnly": false,

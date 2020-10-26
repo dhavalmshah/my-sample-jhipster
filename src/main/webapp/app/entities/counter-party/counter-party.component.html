@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="mySampleApp.counterParty.home.title">Counter Parties</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-counter-party" [routerLink]="['/counter-party/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="mySampleApp.counterParty.home.createLabel">
+            Create a new Counter Party
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="counterParties?.length === 0">
+        <span jhiTranslate="mySampleApp.counterParty.home.notFound">No counterParties found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="counterParties && counterParties.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.counterParty.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.counterParty.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.counterParty.notes">Notes</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let counterParty of counterParties ;trackBy: trackId">
+                    <td><a [routerLink]="['/counter-party', counterParty.id, 'view']">{{ counterParty.id }}</a></td>
+                    <td>{{ counterParty.name }}</td>
+                    <td jhiTranslate="{{ 'mySampleApp.CounterPartyType.' + counterParty.type }}">{{ counterParty.type }}</td>
+                    <td>{{ counterParty.notes }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/counter-party', counterParty.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/counter-party', counterParty.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(counterParty)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

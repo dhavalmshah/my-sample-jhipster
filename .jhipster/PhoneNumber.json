@@ -44,7 +44,7 @@
   "entityTableName": "phone_number",
   "dto": "no",
   "pagination": "no",
-  "service": "no",
+  "service": "serviceImpl",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,
   "readOnly": false,

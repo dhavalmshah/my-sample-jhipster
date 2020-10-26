@@ -1,0 +1,23 @@
+{
+  "mySampleApp": {
+    "productAlias": {
+      "home": {
+        "title": "ProductAliases",
+        "createLabel": "नया Product Alias बनाएँ",
+        "createOrEditLabel": "Product Alias बनाएँ या संपादित करें",
+        "notFound": "No Product Aliases found"
+      },
+      "created": "एक नया Product Alias [identifier: {{ param }}] तैयार है",
+      "updated": "एक Product Alias [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Product Alias [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Product Alias [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Product Alias"
+      },
+      "name": "Name",
+      "product": "Product"
+    }
+  }
+}
