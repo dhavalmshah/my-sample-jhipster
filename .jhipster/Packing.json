@@ -1,0 +1,71 @@
+{
+  "name": "Packing",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "javadoc": "quantity in a unit of item, e.g. if it is drums then quantity is 1, because every drum is a single piece",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "packingType",
+      "fieldType": "PackingType",
+      "fieldValues": "Drum,Bag,Strip,Bulk,Bottle,Loose",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "netWeight",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "grossWeight",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "unit",
+      "otherEntityRelationshipName": "packing",
+      "relationshipValidateRules": "required",
+      "relationshipName": "unit",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201027194138",
+  "entityTableName": "packing",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

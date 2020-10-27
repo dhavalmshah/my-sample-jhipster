@@ -1,0 +1,54 @@
+{
+  "name": "PhoneNumber",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ContactType",
+      "fieldValues": "WORK,PERSONAL,HOME,OFFICE,MAIN,OTHER,PRIMARY",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "countryCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength",
+        "minlength"
+      ],
+      "fieldValidateRulesPattern": "^[-\\s\\./0-9]*$",
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "5"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "phones",
+      "relationshipName": "contact",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201027193038",
+  "javadoc": "Phone number",
+  "entityTableName": "phone_number",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "TransportDetail",
+  "fields": [
+    {
+      "fieldName": "transportNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength"
+      ],
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "transportStartDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "estimatedEndDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "actualEndDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "counterParty",
+      "otherEntityRelationshipName": "transportDetail",
+      "relationshipName": "transporter",
+      "otherEntityField": "displayName"
+    }
+  ],
+  "changelogDate": "20201027194738",
+  "entityTableName": "transport_detail",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
