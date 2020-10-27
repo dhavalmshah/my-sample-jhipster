@@ -1,0 +1,45 @@
+{
+  "name": "EmailAddress",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ContactType",
+      "fieldValues": "WORK,PERSONAL,HOME,OFFICE,MAIN,OTHER,PRIMARY",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "emailAddress",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength",
+        "pattern"
+      ],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9\\.\\!\\#\\$\\%\\&\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+@[a-zA-Z0-9-]+\\.(?:[a-zA-Z0-9-]+)*$"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "emails",
+      "relationshipName": "contact",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201027210127",
+  "javadoc": "Email Address",
+  "entityTableName": "email_address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

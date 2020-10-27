@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productAlias">
+            <h2><span jhiTranslate="mySampleApp.productAlias.detail.title">Product Alias</span> {{ productAlias.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.productAlias.name">Name</span></dt>
+                <dd>
+                    <span>{{ productAlias.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.productAlias.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productAlias.product">
+                        <a [routerLink]="['/product', productAlias.product?.id, 'view']">{{ productAlias.product?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-alias', productAlias.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

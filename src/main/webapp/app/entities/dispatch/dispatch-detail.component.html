@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dispatch">
+            <h2><span jhiTranslate="mySampleApp.dispatch.detail.title">Dispatch</span> {{ dispatch.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.dispatch.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'mySampleApp.GoodsDispatchStatus.' + dispatch.status }}">{{ dispatch.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.dispatch.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="dispatch.transaction">
+                        <a [routerLink]="['/stock-transaction', dispatch.transaction?.id, 'view']">{{ dispatch.transaction?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.dispatch.transporter">Transporter</span></dt>
+                <dd>
+                    <div *ngIf="dispatch.transporter">
+                        <a [routerLink]="['/transport-details', dispatch.transporter?.id, 'view']">{{ dispatch.transporter?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.dispatch.transporter2">Transporter 2</span></dt>
+                <dd>
+                    <div *ngIf="dispatch.transporter2">
+                        <a [routerLink]="['/transport-details', dispatch.transporter2?.id, 'view']">{{ dispatch.transporter2?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dispatch', dispatch.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "mySampleApp": {
+    "GoodsReceivedStatus": {
+      "null": "",
+      "ORDERED": "ORDERED",
+      "RECEIVED": "RECEIVED",
+      "INSTOCK": "INSTOCK",
+      "DONOTUSE": "DONOTUSE"
+    }
+  }
+}

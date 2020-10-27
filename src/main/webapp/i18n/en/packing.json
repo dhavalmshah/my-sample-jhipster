@@ -1,0 +1,30 @@
+{
+  "mySampleApp": {
+    "packing": {
+      "home": {
+        "title": "Packings",
+        "createLabel": "Create a new Packing",
+        "createOrEditLabel": "Create or edit a Packing",
+        "notFound": "No Packings found"
+      },
+      "created": "A new Packing is created with identifier {{ param }}",
+      "updated": "A Packing is updated with identifier {{ param }}",
+      "deleted": "A Packing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Packing {{ id }}?"
+      },
+      "detail": {
+        "title": "Packing"
+      },
+      "name": "Name",
+      "quantity": "Quantity",
+      "packingType": "Packing Type",
+      "netWeight": "Net Weight",
+      "grossWeight": "Gross Weight",
+      "unit": "Unit",
+      "help": {
+        "quantity": "quantity in a unit of item, e.g. if it is drums then quantity is 1, because every drum is a single piece"
+      }
+    }
+  }
+}

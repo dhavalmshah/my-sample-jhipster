@@ -1,0 +1,24 @@
+{
+  "mySampleApp": {
+    "billingCompany": {
+      "home": {
+        "title": "BillingCompanies",
+        "createLabel": "नया Billing Company बनाएँ",
+        "createOrEditLabel": "Billing Company बनाएँ या संपादित करें",
+        "notFound": "No Billing Companies found"
+      },
+      "created": "एक नया Billing Company [identifier: {{ param }}] तैयार है",
+      "updated": "एक Billing Company [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Billing Company [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Billing Company [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Billing Company"
+      },
+      "name": "Name",
+      "notes": "Notes",
+      "locations": "Locations"
+    }
+  }
+}

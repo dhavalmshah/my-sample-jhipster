@@ -1,0 +1,13 @@
+{
+  "mySampleApp": {
+    "ProductionStatus": {
+      "null": "",
+      "PLANNED": "PLANNED",
+      "COOLING": "COOLING",
+      "PACKING": "PACKING",
+      "TESTING": "TESTING",
+      "READY": "READY",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

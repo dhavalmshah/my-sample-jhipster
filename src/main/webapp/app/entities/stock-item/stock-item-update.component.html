@@ -1,0 +1,149 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-stock-item-heading" jhiTranslate="mySampleApp.stockItem.home.createOrEditLabel">Create or edit a Stock Item</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="CANPLAN">{{ 'mySampleApp.StockStatus.CANPLAN' | translate }}</option>
+                        <option value="TESTING">{{ 'mySampleApp.StockStatus.TESTING' | translate }}</option>
+                        <option value="APPROVED">{{ 'mySampleApp.StockStatus.APPROVED' | translate }}</option>
+                        <option value="READY">{{ 'mySampleApp.StockStatus.READY' | translate }}</option>
+                        <option value="CANCELED">{{ 'mySampleApp.StockStatus.CANCELED' | translate }}</option>
+                        <option value="ONHOLD">{{ 'mySampleApp.StockStatus.ONHOLD' | translate }}</option>
+                        <option value="OPENED">{{ 'mySampleApp.StockStatus.OPENED' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.quantity" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                           formControlName="quantity"/>
+                    <div *ngIf="editForm.get('quantity')!.invalid && (editForm.get('quantity')!.dirty || editForm.get('quantity')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('quantity')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('quantity')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.batchNumber" for="field_batchNumber">Batch Number</label>
+                    <input type="text" class="form-control" name="batchNumber" id="field_batchNumber"
+                           formControlName="batchNumber"/>
+                    <div *ngIf="editForm.get('batchNumber')!.invalid && (editForm.get('batchNumber')!.dirty || editForm.get('batchNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('batchNumber')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('batchNumber')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.unit" for="field_unit">Unit</label>
+                    <select class="form-control" id="field_unit" name="unit" formControlName="unit">
+                        <option *ngIf="!editForm.get('unit')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="unitOption.id === editForm.get('unit')!.value?.id ? editForm.get('unit')!.value : unitOption" *ngFor="let unitOption of units; trackBy: trackById">{{ unitOption.name }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('unit')!.invalid && (editForm.get('unit')!.dirty || editForm.get('unit')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('unit')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.packing" for="field_packing">Packing</label>
+                    <select class="form-control" id="field_packing" name="packing" formControlName="packing">
+                        <option *ngIf="!editForm.get('packing')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="packingOption.id === editForm.get('packing')!.value?.id ? editForm.get('packing')!.value : packingOption" *ngFor="let packingOption of packings; trackBy: trackById">{{ packingOption.name }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('packing')!.invalid && (editForm.get('packing')!.dirty || editForm.get('packing')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('packing')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.product" for="field_product">Product</label>
+                    <select class="form-control" id="field_product" name="product" formControlName="product">
+                        <option *ngIf="!editForm.get('product')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="productOption.id === editForm.get('product')!.value?.id ? editForm.get('product')!.value : productOption" *ngFor="let productOption of products; trackBy: trackById">{{ productOption.name }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('product')!.invalid && (editForm.get('product')!.dirty || editForm.get('product')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('product')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.location" for="field_location">Location</label>
+                    <select class="form-control" id="field_location" name="location" formControlName="location">
+                        <option *ngIf="!editForm.get('location')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="billingLocationOption.id === editForm.get('location')!.value?.id ? editForm.get('location')!.value : billingLocationOption" *ngFor="let billingLocationOption of billinglocations; trackBy: trackById">{{ billingLocationOption.shortCode }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('location')!.invalid && (editForm.get('location')!.dirty || editForm.get('location')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('location')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.creditTrans" for="field_creditTrans">Credit Trans</label>
+                    <select class="form-control" id="field_creditTrans" name="creditTrans" formControlName="creditTrans">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockTransactionOption.id === editForm.get('creditTrans')!.value?.id ? editForm.get('creditTrans')!.value : stockTransactionOption" *ngFor="let stockTransactionOption of stocktransactions; trackBy: trackById">{{ stockTransactionOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.stockItem.debitTrans" for="field_debitTrans">Debit Trans</label>
+                    <select class="form-control" id="field_debitTrans" name="debitTrans" formControlName="debitTrans">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockTransactionOption.id === editForm.get('debitTrans')!.value?.id ? editForm.get('debitTrans')!.value : stockTransactionOption" *ngFor="let stockTransactionOption of stocktransactions; trackBy: trackById">{{ stockTransactionOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

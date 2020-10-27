@@ -1,0 +1,239 @@
+enum ContactType {
+	WORK, PERSONAL, HOME, OFFICE, MAIN, OTHER, PRIMARY
+}
+
+entity Region {
+	regionName String required pattern(/^[A-Z][a-zA-Z0-9 -]*$/) maxlength(255)
+}
+
+entity Country {
+	countryName String required pattern(/^[A-Z][a-zA-Z0-9 -]*$/) maxlength(255)
+}
+
+entity City {
+	cityName String required pattern(/^[A-Z][a-zA-Z0-9 -]*$/) maxlength(255),
+    stateName String required pattern(/^[A-Z][a-zA-Z0-9 -]*$/) maxlength(255)
+}
+
+// bi-directional
+relationship OneToMany {
+  Region{countries(countryName)} to Country{region(regionName) required}
+  Country{cities(cityName)} to City{country(countryName) required}
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Address {
+	buildingAddress String required,
+	streetAddress String,
+	postalCode String required
+}
+
+/** Phone number */
+entity PhoneNumber {
+	type ContactType required,
+	countryCode String required,
+    phoneNumber String required pattern(/^[-\s\./0-9]*$/) maxlength(255) minlength(5)
+}
+
+/** Email Address */
+entity EmailAddress {
+	type ContactType required,
+	emailAddress String required maxlength(255) pattern(/^[a-zA-Z0-9\.\!\#\$\%\&\*\+\/\=\?\^\_\`\{\|\}\~\-]+@[a-zA-Z0-9-]+\.(?:[a-zA-Z0-9-]+)*$/)
+}
+
+//uni-drectional
+relationship ManyToOne {
+  Address{city(displayString) required} to City
+}
+
+entity Contact {
+	firstName String required pattern(/^[A-Z][a-z]+$/) maxlength(255),
+    lastName String required pattern(/^[A-Z][a-z]+$/) maxlength(255),
+    designation String pattern(/^[A-Z][a-z]+$/) maxlength(255)
+    notes String maxlength(65535)
+}
+
+// bi-directional
+relationship OneToMany {
+  Contact{phones(phoneNumber)} to PhoneNumber{contact}
+  Contact{emails(emailAddress)} to EmailAddress{contact}
+}
+
+entity Location {
+	name String required pattern(/^[A-Z][a-z]+\d*$/) maxlength(255),
+    panNumber String required maxlength(255),
+    gstNumber String required maxlength(255)
+}
+
+entity BillingLocation {
+	name String required pattern(/^[A-Z][a-z]+\d*$/) maxlength(255),
+    shortCode String required unique pattern(/^[A-Z][a-z]+\d*$/) maxlength(10),
+    panNumber String required maxlength(255),
+    gstNumber String required maxlength(255)
+}
+
+relationship OneToOne {
+  Contact{address required} to Address
+  Location{contact required} to Contact
+  BillingLocation{contact required} to Contact
+}
+
+enum CounterPartyType {
+	CUSTOMER, SELLER, BOTH, SISCONCERN, TRANSPORTER, BANK, AGENCY, CLEARING, SHIPPING, PACKING, SERVICE, OTHER
+}
+
+entity CounterParty {
+	name String required maxlength(255),
+    type CounterPartyType,
+    notes String maxlength(65535)
+}
+
+entity BillingCompany {
+	name String required maxlength(255),
+    notes String maxlength(65535)
+}
+
+// bi-directional
+relationship OneToMany {
+  CounterParty{locations(displayString) required} to Location{counterParty(name)}
+  BillingCompany{locations(displayString) required} to BillingLocation{company(name)}
+}
+
+enum ProductCategory {
+	RAWMATERIAL, FINISHEDGOODS, CONSUMABLE, PACKINGMATERIAL, OFFICESUPPLIES
+}
+
+enum QuantityType {
+  VOLUME,
+  WEIGHT,
+  LENGTH,
+  TEMPERATURE,
+  PIECES,
+  OTHER
+}
+
+entity ProductType {
+	name String required maxlength(255),
+    category ProductCategory,
+    quantityType QuantityType,
+    hsnNumber String required,
+    description String required maxlength(65535)
+}
+
+entity Product {
+	name String required unique maxlength(255),
+    productCode String required unique maxlength(10)
+}
+
+entity ProductAlias {
+	name String required maxlength(255)
+}
+
+// bi-directional
+relationship OneToMany {
+  Product{aliases(name) required} to ProductAlias{product(name)}
+  ProductType{product(name) required} to Product{productType(name)}
+}
+
+entity Unit {
+    name String required maxlength(10),
+    quantityType QuantityType,
+    fullName String required maxlength(50),
+    baseUnitMultiplier Integer required,
+    isSmallerThanBase Boolean required /** If the unit is smaller than base unit then check this flag */
+}
+
+enum PackingType {
+	Drum, Bag, Strip, Bulk, Bottle, Loose
+}
+
+entity Packing {
+	name String required maxlength(10),
+    /**quantity in a unit of item, e.g. if it is drums then quantity is 1, because every drum is a single piece*/
+    quantity Integer required min(0),
+    packingType PackingType required,
+    netWeight Double required min(0),
+    grossWeight Double required min(0)
+}
+
+relationship ManyToOne {
+	Packing{unit(name) required} to Unit
+}
+
+enum StockStatus {
+	CANPLAN, TESTING, APPROVED, READY, CANCELED, ONHOLD, OPENED
+}
+
+entity StockItem {
+	status StockStatus required,
+	quantity Integer required,
+    batchNumber String required maxlength(50)
+}
+
+relationship ManyToOne {
+	StockItem{unit(name) required} to Unit
+    StockItem{packing(name) required} to Packing
+    StockItem{product(name) required} to Product
+    StockItem{location(shortCode) required} to BillingLocation
+}
+
+enum StockTransactionType {
+	PURCHASE, SALE, PRODUCTION, ADJUSTMENT, TRANSFORM, TRANSFER
+}
+
+entity StockTransaction {
+	description String required maxlength(65335),
+    transactionDate Instant required,
+    transactionType StockTransactionType required
+}
+
+enum ProductionStatus {
+	PLANNED, COOLING, PACKING, TESTING, READY, CANCELLED
+}
+
+enum GoodsDispatchStatus {
+	PLANNED, APPROVED, PACKED, LOADED, DISPATCHED, RECEIVED
+}
+
+enum GoodsReceivedStatus {
+	ORDERED, RECEIVED, INSTOCK, DONOTUSE
+}
+
+entity Production {
+	status ProductionStatus required
+}
+
+entity GoodsReceived {
+	status GoodsReceivedStatus required
+}
+
+entity Dispatch {
+	status GoodsDispatchStatus required
+}
+
+entity TransportDetails {
+	transportNumber String required minlength(2),
+    transportStartDate Instant,
+    estimatedEndDate Instant,
+    actualEndDate Instant
+}
+
+relationship OneToOne {
+	Production{transaction} to StockTransaction
+    GoodsReceived{transaction} to StockTransaction
+    Dispatch{transaction} to StockTransaction
+}
+
+relationship OneToMany {
+	StockTransaction{credits(displayString)} to StockItem{creditTrans}
+    StockTransaction{debits(displayString)} to StockItem{debitTrans}
+}
+
+relationship ManyToOne {
+	TransportDetails{transporter(displayName)} to CounterParty
+    Dispatch{transporter} to TransportDetails
+    Dispatch{transporter2} to TransportDetails   
+}
+
+service all with serviceImpl

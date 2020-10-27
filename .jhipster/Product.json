@@ -1,0 +1,52 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "productCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "10"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productAlias",
+      "otherEntityRelationshipName": "product",
+      "relationshipValidateRules": "required",
+      "relationshipName": "aliases"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "productType",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "productType",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201027210827",
+  "entityTableName": "product",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

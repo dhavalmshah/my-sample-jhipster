@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockItem">
+            <h2><span jhiTranslate="mySampleApp.stockItem.detail.title">Stock Item</span> {{ stockItem.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.stockItem.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'mySampleApp.StockStatus.' + stockItem.status }}">{{ stockItem.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{ stockItem.quantity }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.batchNumber">Batch Number</span></dt>
+                <dd>
+                    <span>{{ stockItem.batchNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.unit">Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.unit">
+                        <a [routerLink]="['/unit', stockItem.unit?.id, 'view']">{{ stockItem.unit?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.packing">Packing</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.packing">
+                        <a [routerLink]="['/packing', stockItem.packing?.id, 'view']">{{ stockItem.packing?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.product">
+                        <a [routerLink]="['/product', stockItem.product?.id, 'view']">{{ stockItem.product?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.location">
+                        <a [routerLink]="['/billing-location', stockItem.location?.id, 'view']">{{ stockItem.location?.shortCode }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.creditTrans">Credit Trans</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.creditTrans">
+                        <a [routerLink]="['/stock-transaction', stockItem.creditTrans?.id, 'view']">{{ stockItem.creditTrans?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.stockItem.debitTrans">Debit Trans</span></dt>
+                <dd>
+                    <div *ngIf="stockItem.debitTrans">
+                        <a [routerLink]="['/stock-transaction', stockItem.debitTrans?.id, 'view']">{{ stockItem.debitTrans?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-item', stockItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

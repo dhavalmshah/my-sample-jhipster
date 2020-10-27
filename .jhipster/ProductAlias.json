@@ -1,0 +1,34 @@
+{
+  "name": "ProductAlias",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "aliases",
+      "relationshipName": "product",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201027210927",
+  "entityTableName": "product_alias",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
