@@ -40,5 +40,10 @@
   },
   "git-provider": "GitHub",
   "git-company": "dhavalmshah",
-  "repository-name": "my-sample-jhipster"
+  "repository-name": "my-sample-jhipster",
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "custom",
+    "auditPage": true,
+    "lastLiquibaseTimestamp": 1603808826000
+  }
 }
