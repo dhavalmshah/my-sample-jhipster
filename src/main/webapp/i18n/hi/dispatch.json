@@ -1,0 +1,25 @@
+{
+  "mySampleApp": {
+    "dispatch": {
+      "home": {
+        "title": "Dispatches",
+        "createLabel": "नया Dispatch बनाएँ",
+        "createOrEditLabel": "Dispatch बनाएँ या संपादित करें",
+        "notFound": "No Dispatches found"
+      },
+      "created": "एक नया Dispatch [identifier: {{ param }}] तैयार है",
+      "updated": "एक Dispatch [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Dispatch [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Dispatch [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Dispatch"
+      },
+      "status": "Status",
+      "transaction": "Transaction",
+      "transporter": "Transporter",
+      "transporter2": "Transporter 2"
+    }
+  }
+}

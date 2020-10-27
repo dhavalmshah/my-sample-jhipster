@@ -1,0 +1,11 @@
+id;name;quantity;packing_type;net_weight;gross_weight;unit_id
+1;microchip;44908;Bulk;90329;10410;1
+2;program dr;16472;Strip;70114;24898;2
+3;Personal L;44042;Bottle;61720;82195;3
+4;generate;13424;Strip;32498;464;4
+5;Branding;76688;Bag;37026;54564;5
+6;navigate i;70197;Loose;88697;19026;6
+7;Avon magen;72880;Bottle;40569;60430;7
+8;CFA Franc ;99193;Bulk;97585;3810;8
+9;eyeballs z;95981;Strip;8053;47006;9
+10;Fresh;3199;Bulk;58535;89647;10

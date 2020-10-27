@@ -1,0 +1,27 @@
+{
+  "mySampleApp": {
+    "billingLocation": {
+      "home": {
+        "title": "Billing Locations",
+        "createLabel": "Create a new Billing Location",
+        "createOrEditLabel": "Create or edit a Billing Location",
+        "notFound": "No Billing Locations found"
+      },
+      "created": "A new Billing Location is created with identifier {{ param }}",
+      "updated": "A Billing Location is updated with identifier {{ param }}",
+      "deleted": "A Billing Location is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Billing Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Billing Location"
+      },
+      "name": "Name",
+      "shortCode": "Short Code",
+      "panNumber": "Pan Number",
+      "gstNumber": "Gst Number",
+      "contact": "Contact",
+      "company": "Company"
+    }
+  }
+}

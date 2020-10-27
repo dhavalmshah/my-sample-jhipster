@@ -1,0 +1,24 @@
+{
+  "mySampleApp": {
+    "emailAddress": {
+      "home": {
+        "title": "EmailAddresses",
+        "createLabel": "नया Email Address बनाएँ",
+        "createOrEditLabel": "Email Address बनाएँ या संपादित करें",
+        "notFound": "No Email Addresses found"
+      },
+      "created": "एक नया Email Address [identifier: {{ param }}] तैयार है",
+      "updated": "एक Email Address [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Email Address [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Email Address [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Email Address"
+      },
+      "type": "Type",
+      "emailAddress": "Email Address",
+      "contact": "Contact"
+    }
+  }
+}

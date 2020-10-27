@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="mySampleApp.emailAddress.home.title">Email Addresses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-email-address" [routerLink]="['/email-address/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="mySampleApp.emailAddress.home.createLabel">
+            Create a new Email Address
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="emailAddresses?.length === 0">
+        <span jhiTranslate="mySampleApp.emailAddress.home.notFound">No emailAddresses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="emailAddresses && emailAddresses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.emailAddress.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.emailAddress.emailAddress">Email Address</span></th>
+                    <th scope="col" ><span jhiTranslate="mySampleApp.emailAddress.contact">Contact</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emailAddress of emailAddresses ;trackBy: trackId">
+                    <td><a [routerLink]="['/email-address', emailAddress.id, 'view']">{{ emailAddress.id }}</a></td>
+                    <td jhiTranslate="{{ 'mySampleApp.ContactType.' + emailAddress.type }}">{{ emailAddress.type }}</td>
+                    <td>{{ emailAddress.emailAddress }}</td>
+                    <td>
+                        <div *ngIf="emailAddress.contact">
+                            <a [routerLink]="['/contact', emailAddress.contact?.id, 'view']" >{{ emailAddress.contact?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/email-address', emailAddress.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/email-address', emailAddress.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(emailAddress)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

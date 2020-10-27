@@ -1,0 +1,30 @@
+{
+  "mySampleApp": {
+    "stockItem": {
+      "home": {
+        "title": "Stock Items",
+        "createLabel": "Create a new Stock Item",
+        "createOrEditLabel": "Create or edit a Stock Item",
+        "notFound": "No Stock Items found"
+      },
+      "created": "A new Stock Item is created with identifier {{ param }}",
+      "updated": "A Stock Item is updated with identifier {{ param }}",
+      "deleted": "A Stock Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Item"
+      },
+      "status": "Status",
+      "quantity": "Quantity",
+      "batchNumber": "Batch Number",
+      "unit": "Unit",
+      "packing": "Packing",
+      "product": "Product",
+      "location": "Location",
+      "trans": "Trans",
+      "trans": "Trans"
+    }
+  }
+}

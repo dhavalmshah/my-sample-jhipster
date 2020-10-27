@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="phoneNumber">
+            <h2><span jhiTranslate="mySampleApp.phoneNumber.detail.title">Phone Number</span> {{ phoneNumber.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.phoneNumber.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'mySampleApp.ContactType.' + phoneNumber.type }}">{{ phoneNumber.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.phoneNumber.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{ phoneNumber.countryCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.phoneNumber.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ phoneNumber.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.phoneNumber.contact">Contact</span></dt>
+                <dd>
+                    <div *ngIf="phoneNumber.contact">
+                        <a [routerLink]="['/contact', phoneNumber.contact?.id, 'view']">{{ phoneNumber.contact?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/phone-number', phoneNumber.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

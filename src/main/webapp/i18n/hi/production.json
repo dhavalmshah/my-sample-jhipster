@@ -1,0 +1,23 @@
+{
+  "mySampleApp": {
+    "production": {
+      "home": {
+        "title": "Productions",
+        "createLabel": "नया Production बनाएँ",
+        "createOrEditLabel": "Production बनाएँ या संपादित करें",
+        "notFound": "No Productions found"
+      },
+      "created": "एक नया Production [identifier: {{ param }}] तैयार है",
+      "updated": "एक Production [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Production [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Production [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Production"
+      },
+      "status": "Status",
+      "transaction": "Transaction"
+    }
+  }
+}

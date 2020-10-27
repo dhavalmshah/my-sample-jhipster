@@ -1,0 +1,34 @@
+{
+  "name": "GoodsReceived",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "GoodsReceivedStatus",
+      "fieldValues": "ORDERED,RECEIVED,INSTOCK,DONOTUSE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "stockTransaction",
+      "otherEntityRelationshipName": "goodsReceived",
+      "relationshipName": "transaction",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201027211438",
+  "entityTableName": "goods_received",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
