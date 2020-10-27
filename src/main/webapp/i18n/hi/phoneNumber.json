@@ -1,0 +1,25 @@
+{
+  "mySampleApp": {
+    "phoneNumber": {
+      "home": {
+        "title": "PhoneNumbers",
+        "createLabel": "नया Phone Number बनाएँ",
+        "createOrEditLabel": "Phone Number बनाएँ या संपादित करें",
+        "notFound": "No Phone Numbers found"
+      },
+      "created": "एक नया Phone Number [identifier: {{ param }}] तैयार है",
+      "updated": "एक Phone Number [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Phone Number [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Phone Number [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Phone Number"
+      },
+      "type": "Type",
+      "countryCode": "Country Code",
+      "phoneNumber": "Phone Number",
+      "contact": "Contact"
+    }
+  }
+}

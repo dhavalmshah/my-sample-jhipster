@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity StockItem.
+    -->
+    <changeSet id="20201027210305-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="unit_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_unit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="unit"/>
+
+        <addForeignKeyConstraint baseColumnNames="packing_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_packing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="packing"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="billing_location"/>
+
+        <addForeignKeyConstraint baseColumnNames="trans_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_trans_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stock_transaction"/>
+
+        <addForeignKeyConstraint baseColumnNames="trans_id"
+                                 baseTableName="stock_item"
+                                 constraintName="fk_stock_item_trans_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stock_transaction"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,54 @@
+{
+  "name": "StockTransaction",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "65335"
+    },
+    {
+      "fieldName": "transactionDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "StockTransactionType",
+      "fieldValues": "PURCHASE,SALE,PRODUCTION,ADJUSTMENT,TRANSFORM,TRANSFER",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "stockItem",
+      "otherEntityRelationshipName": "trans",
+      "relationshipName": "credits"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "stockItem",
+      "otherEntityRelationshipName": "trans",
+      "relationshipName": "debits"
+    }
+  ],
+  "changelogDate": "20201027210405",
+  "entityTableName": "stock_transaction",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

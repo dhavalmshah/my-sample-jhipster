@@ -1,0 +1,30 @@
+{
+  "mySampleApp": {
+    "stockItem": {
+      "home": {
+        "title": "StockItems",
+        "createLabel": "नया Stock Item बनाएँ",
+        "createOrEditLabel": "Stock Item बनाएँ या संपादित करें",
+        "notFound": "No Stock Items found"
+      },
+      "created": "एक नया Stock Item [identifier: {{ param }}] तैयार है",
+      "updated": "एक Stock Item [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Stock Item [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Stock Item [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Stock Item"
+      },
+      "status": "Status",
+      "quantity": "Quantity",
+      "batchNumber": "Batch Number",
+      "unit": "Unit",
+      "packing": "Packing",
+      "product": "Product",
+      "location": "Location",
+      "trans": "Trans",
+      "trans": "Trans"
+    }
+  }
+}

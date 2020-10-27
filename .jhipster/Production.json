@@ -1,0 +1,34 @@
+{
+  "name": "Production",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "ProductionStatus",
+      "fieldValues": "PLANNED,COOLING,PACKING,TESTING,READY,CANCELLED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "stockTransaction",
+      "otherEntityRelationshipName": "production",
+      "relationshipName": "transaction",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201027210505",
+  "entityTableName": "production",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

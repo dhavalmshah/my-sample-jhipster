@@ -1,0 +1,27 @@
+{
+  "mySampleApp": {
+    "billingLocation": {
+      "home": {
+        "title": "BillingLocations",
+        "createLabel": "नया Billing Location बनाएँ",
+        "createOrEditLabel": "Billing Location बनाएँ या संपादित करें",
+        "notFound": "No Billing Locations found"
+      },
+      "created": "एक नया Billing Location [identifier: {{ param }}] तैयार है",
+      "updated": "एक Billing Location [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Billing Location [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Billing Location [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Billing Location"
+      },
+      "name": "Name",
+      "shortCode": "Short Code",
+      "panNumber": "Pan Number",
+      "gstNumber": "Gst Number",
+      "contact": "Contact",
+      "company": "Company"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "mySampleApp": {
+    "packing": {
+      "home": {
+        "title": "Packings",
+        "createLabel": "नया Packing बनाएँ",
+        "createOrEditLabel": "Packing बनाएँ या संपादित करें",
+        "notFound": "No Packings found"
+      },
+      "created": "एक नया Packing [identifier: {{ param }}] तैयार है",
+      "updated": "एक Packing [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Packing [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Packing [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Packing"
+      },
+      "name": "Name",
+      "quantity": "Quantity",
+      "packingType": "Packing Type",
+      "netWeight": "Net Weight",
+      "grossWeight": "Gross Weight",
+      "unit": "Unit",
+      "help": {
+        "quantity": "quantity in a unit of item, e.g. if it is drums then quantity is 1, because every drum is a single piece"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="billingLocation">
+            <h2><span jhiTranslate="mySampleApp.billingLocation.detail.title">Billing Location</span> {{ billingLocation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.billingLocation.name">Name</span></dt>
+                <dd>
+                    <span>{{ billingLocation.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.billingLocation.shortCode">Short Code</span></dt>
+                <dd>
+                    <span>{{ billingLocation.shortCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.billingLocation.panNumber">Pan Number</span></dt>
+                <dd>
+                    <span>{{ billingLocation.panNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.billingLocation.gstNumber">Gst Number</span></dt>
+                <dd>
+                    <span>{{ billingLocation.gstNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.billingLocation.contact">Contact</span></dt>
+                <dd>
+                    <div *ngIf="billingLocation.contact">
+                        <a [routerLink]="['/contact', billingLocation.contact?.id, 'view']">{{ billingLocation.contact?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.billingLocation.company">Company</span></dt>
+                <dd>
+                    <div *ngIf="billingLocation.company">
+                        <a [routerLink]="['/billing-company', billingLocation.company?.id, 'view']">{{ billingLocation.company?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/billing-location', billingLocation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

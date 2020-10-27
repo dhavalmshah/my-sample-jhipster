@@ -1,0 +1,48 @@
+{
+  "name": "Dispatch",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "GoodsDispatchStatus",
+      "fieldValues": "PLANNED,APPROVED,PACKED,LOADED,DISPATCHED,RECEIVED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "stockTransaction",
+      "otherEntityRelationshipName": "dispatch",
+      "relationshipName": "transaction",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "transportDetails",
+      "otherEntityRelationshipName": "dispatch",
+      "relationshipName": "transporter",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "transportDetails",
+      "otherEntityRelationshipName": "dispatch",
+      "relationshipName": "transporter2",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201027210705",
+  "entityTableName": "dispatch",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

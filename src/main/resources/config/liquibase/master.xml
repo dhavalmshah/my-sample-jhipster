@@ -14,7 +14,45 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027204705_added_entity_Region.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027204805_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027204905_added_entity_City.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205005_added_entity_Address.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205105_added_entity_PhoneNumber.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205205_added_entity_EmailAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205305_added_entity_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205405_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205505_added_entity_BillingLocation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205605_added_entity_CounterParty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205705_added_entity_BillingCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205805_added_entity_ProductType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205905_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210005_added_entity_ProductAlias.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210105_added_entity_Unit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210205_added_entity_Packing.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210305_added_entity_StockItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210405_added_entity_StockTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210505_added_entity_Production.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210605_added_entity_GoodsReceived.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210705_added_entity_Dispatch.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210805_added_entity_TransportDetails.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201027204805_added_entity_constraints_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027204905_added_entity_constraints_City.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205005_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205105_added_entity_constraints_PhoneNumber.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205205_added_entity_constraints_EmailAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205305_added_entity_constraints_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205405_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205505_added_entity_constraints_BillingLocation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027205905_added_entity_constraints_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210005_added_entity_constraints_ProductAlias.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210205_added_entity_constraints_Packing.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210305_added_entity_constraints_StockItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210505_added_entity_constraints_Production.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210605_added_entity_constraints_GoodsReceived.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210705_added_entity_constraints_Dispatch.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201027210805_added_entity_constraints_TransportDetails.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

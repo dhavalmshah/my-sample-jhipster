@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="goodsReceived">
+            <h2><span jhiTranslate="mySampleApp.goodsReceived.detail.title">Goods Received</span> {{ goodsReceived.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.goodsReceived.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'mySampleApp.GoodsReceivedStatus.' + goodsReceived.status }}">{{ goodsReceived.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.goodsReceived.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="goodsReceived.transaction">
+                        <a [routerLink]="['/stock-transaction', goodsReceived.transaction?.id, 'view']">{{ goodsReceived.transaction?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/goods-received', goodsReceived.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

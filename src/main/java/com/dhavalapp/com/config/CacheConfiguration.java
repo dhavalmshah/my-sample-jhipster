@@ -47,6 +47,38 @@ public class CacheConfiguration {
             createCache(cm, com.dhavalapp.com.domain.User.class.getName());
             createCache(cm, com.dhavalapp.com.domain.Authority.class.getName());
             createCache(cm, com.dhavalapp.com.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.dhavalapp.com.domain.Region.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Region.class.getName() + ".countries");
+            createCache(cm, com.dhavalapp.com.domain.Country.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Country.class.getName() + ".cities");
+            createCache(cm, com.dhavalapp.com.domain.City.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Address.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.PhoneNumber.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.EmailAddress.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName() + ".phones");
+            createCache(cm, com.dhavalapp.com.domain.Contact.class.getName() + ".emails");
+            createCache(cm, com.dhavalapp.com.domain.Location.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.BillingLocation.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.CounterParty.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.CounterParty.class.getName() + ".locations");
+            createCache(cm, com.dhavalapp.com.domain.BillingCompany.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.BillingCompany.class.getName() + ".locations");
+            createCache(cm, com.dhavalapp.com.domain.ProductType.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.ProductType.class.getName() + ".products");
+            createCache(cm, com.dhavalapp.com.domain.Product.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Product.class.getName() + ".aliases");
+            createCache(cm, com.dhavalapp.com.domain.ProductAlias.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Unit.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Packing.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.StockItem.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.StockTransaction.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.StockTransaction.class.getName() + ".credits");
+            createCache(cm, com.dhavalapp.com.domain.StockTransaction.class.getName() + ".debits");
+            createCache(cm, com.dhavalapp.com.domain.Production.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.GoodsReceived.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.Dispatch.class.getName());
+            createCache(cm, com.dhavalapp.com.domain.TransportDetails.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

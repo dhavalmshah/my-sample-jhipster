@@ -1,0 +1,25 @@
+{
+  "mySampleApp": {
+    "counterParty": {
+      "home": {
+        "title": "CounterParties",
+        "createLabel": "नया Counter Party बनाएँ",
+        "createOrEditLabel": "Counter Party बनाएँ या संपादित करें",
+        "notFound": "No Counter Parties found"
+      },
+      "created": "एक नया Counter Party [identifier: {{ param }}] तैयार है",
+      "updated": "एक Counter Party [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Counter Party [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Counter Party [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Counter Party"
+      },
+      "name": "Name",
+      "type": "Type",
+      "notes": "Notes",
+      "locations": "Locations"
+    }
+  }
+}

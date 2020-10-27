@@ -1,0 +1,13 @@
+{
+  "mySampleApp": {
+    "GoodsDispatchStatus": {
+      "null": "",
+      "PLANNED": "PLANNED",
+      "APPROVED": "APPROVED",
+      "PACKED": "PACKED",
+      "LOADED": "LOADED",
+      "DISPATCHED": "DISPATCHED",
+      "RECEIVED": "RECEIVED"
+    }
+  }
+}

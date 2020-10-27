@@ -1,0 +1,88 @@
+{
+  "name": "StockItem",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "StockStatus",
+      "fieldValues": "CANPLAN,TESTING,APPROVED,READY,CANCELED,ONHOLD,OPENED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "batchNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "unit",
+      "otherEntityRelationshipName": "stockItem",
+      "relationshipValidateRules": "required",
+      "relationshipName": "unit",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "packing",
+      "otherEntityRelationshipName": "stockItem",
+      "relationshipValidateRules": "required",
+      "relationshipName": "packing",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "stockItem",
+      "relationshipValidateRules": "required",
+      "relationshipName": "product",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "billingLocation",
+      "otherEntityRelationshipName": "stockItem",
+      "relationshipValidateRules": "required",
+      "relationshipName": "location",
+      "otherEntityField": "shortCode"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "stockTransaction",
+      "otherEntityRelationshipName": "credits",
+      "relationshipName": "trans",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "stockTransaction",
+      "otherEntityRelationshipName": "debits",
+      "relationshipName": "trans",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201027210305",
+  "entityTableName": "stock_item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

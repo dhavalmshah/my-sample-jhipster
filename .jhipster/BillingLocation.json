@@ -1,0 +1,75 @@
+{
+  "name": "BillingLocation",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d*$",
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "shortCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+\\d*$",
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "panNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "gstNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "billingLocation",
+      "relationshipValidateRules": "required",
+      "relationshipName": "contact",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "billingCompany",
+      "otherEntityRelationshipName": "locations",
+      "relationshipName": "company",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201027205505",
+  "entityTableName": "billing_location",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
