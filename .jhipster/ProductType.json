@@ -1,0 +1,60 @@
+{
+  "name": "ProductType",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "ProductCategory",
+      "fieldValues": "RAWMATERIAL,FINISHEDGOODS,CONSUMABLE,PACKINGMATERIAL,OFFICESUPPLIES"
+    },
+    {
+      "fieldName": "quantityType",
+      "fieldType": "QuantityType",
+      "fieldValues": "VOLUME,WEIGHT,LENGTH,TEMPERATURE,PIECES,OTHER"
+    },
+    {
+      "fieldName": "hsnNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "productType",
+      "relationshipValidateRules": "required",
+      "relationshipName": "product"
+    }
+  ],
+  "changelogDate": "20201027210727",
+  "entityTableName": "product_type",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

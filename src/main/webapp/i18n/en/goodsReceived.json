@@ -1,0 +1,23 @@
+{
+  "mySampleApp": {
+    "goodsReceived": {
+      "home": {
+        "title": "Goods Receiveds",
+        "createLabel": "Create a new Goods Received",
+        "createOrEditLabel": "Create or edit a Goods Received",
+        "notFound": "No Goods Receiveds found"
+      },
+      "created": "A new Goods Received is created with identifier {{ param }}",
+      "updated": "A Goods Received is updated with identifier {{ param }}",
+      "deleted": "A Goods Received is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Goods Received {{ id }}?"
+      },
+      "detail": {
+        "title": "Goods Received"
+      },
+      "status": "Status",
+      "transaction": "Transaction"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Address",
+  "fields": [
+    {
+      "fieldName": "buildingAddress",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "streetAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postalCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "city",
+      "otherEntityRelationshipName": "address",
+      "relationshipValidateRules": "required",
+      "relationshipName": "city",
+      "otherEntityField": "displayString"
+    }
+  ],
+  "changelogDate": "20201027205927",
+  "javadoc": "not an ignored comment",
+  "entityTableName": "address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

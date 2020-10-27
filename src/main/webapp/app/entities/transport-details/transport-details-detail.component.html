@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transportDetails">
+            <h2><span jhiTranslate="mySampleApp.transportDetails.detail.title">Transport Details</span> {{ transportDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mySampleApp.transportDetails.transportNumber">Transport Number</span></dt>
+                <dd>
+                    <span>{{ transportDetails.transportNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.transportDetails.transportStartDate">Transport Start Date</span></dt>
+                <dd>
+                    <span>{{ transportDetails.transportStartDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.transportDetails.estimatedEndDate">Estimated End Date</span></dt>
+                <dd>
+                    <span>{{ transportDetails.estimatedEndDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.transportDetails.actualEndDate">Actual End Date</span></dt>
+                <dd>
+                    <span>{{ transportDetails.actualEndDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mySampleApp.transportDetails.transporter">Transporter</span></dt>
+                <dd>
+                    <div *ngIf="transportDetails.transporter">
+                        <a [routerLink]="['/counter-party', transportDetails.transporter?.id, 'view']">{{ transportDetails.transporter?.displayName }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transport-details', transportDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

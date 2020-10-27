@@ -1,0 +1,26 @@
+{
+  "mySampleApp": {
+    "transportDetails": {
+      "home": {
+        "title": "TransportDetails",
+        "createLabel": "नया Transport Details बनाएँ",
+        "createOrEditLabel": "Transport Details बनाएँ या संपादित करें",
+        "notFound": "No Transport Details found"
+      },
+      "created": "एक नया Transport Details [identifier: {{ param }}] तैयार है",
+      "updated": "एक Transport Details [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Transport Details [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Transport Details [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Transport Details"
+      },
+      "transportNumber": "Transport Number",
+      "transportStartDate": "Transport Start Date",
+      "estimatedEndDate": "Estimated End Date",
+      "actualEndDate": "Actual End Date",
+      "transporter": "Transporter"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dispatch-heading" jhiTranslate="mySampleApp.dispatch.home.createOrEditLabel">Create or edit a Dispatch</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.dispatch.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="PLANNED">{{ 'mySampleApp.GoodsDispatchStatus.PLANNED' | translate }}</option>
+                        <option value="APPROVED">{{ 'mySampleApp.GoodsDispatchStatus.APPROVED' | translate }}</option>
+                        <option value="PACKED">{{ 'mySampleApp.GoodsDispatchStatus.PACKED' | translate }}</option>
+                        <option value="LOADED">{{ 'mySampleApp.GoodsDispatchStatus.LOADED' | translate }}</option>
+                        <option value="DISPATCHED">{{ 'mySampleApp.GoodsDispatchStatus.DISPATCHED' | translate }}</option>
+                        <option value="RECEIVED">{{ 'mySampleApp.GoodsDispatchStatus.RECEIVED' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.dispatch.transaction" for="field_transaction">Transaction</label>
+                    <select class="form-control" id="field_transaction" name="transaction" formControlName="transaction">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockTransactionOption.id === editForm.get('transaction')!.value?.id ? editForm.get('transaction')!.value : stockTransactionOption" *ngFor="let stockTransactionOption of transactions; trackBy: trackById">{{ stockTransactionOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.dispatch.transporter" for="field_transporter">Transporter</label>
+                    <select class="form-control" id="field_transporter" name="transporter" formControlName="transporter">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transportDetailsOption.id === editForm.get('transporter')!.value?.id ? editForm.get('transporter')!.value : transportDetailsOption" *ngFor="let transportDetailsOption of transportdetails; trackBy: trackById">{{ transportDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mySampleApp.dispatch.transporter2" for="field_transporter2">Transporter 2</label>
+                    <select class="form-control" id="field_transporter2" name="transporter2" formControlName="transporter2">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transportDetailsOption.id === editForm.get('transporter2')!.value?.id ? editForm.get('transporter2')!.value : transportDetailsOption" *ngFor="let transportDetailsOption of transportdetails; trackBy: trackById">{{ transportDetailsOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

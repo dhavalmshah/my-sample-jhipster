@@ -1,0 +1,28 @@
+{
+  "mySampleApp": {
+    "contact": {
+      "home": {
+        "title": "Contacts",
+        "createLabel": "नया Contact बनाएँ",
+        "createOrEditLabel": "Contact बनाएँ या संपादित करें",
+        "notFound": "No Contacts found"
+      },
+      "created": "एक नया Contact [identifier: {{ param }}] तैयार है",
+      "updated": "एक Contact [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Contact [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Contact [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Contact"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "designation": "Designation",
+      "notes": "Notes",
+      "address": "Address",
+      "phones": "Phones",
+      "emails": "Emails"
+    }
+  }
+}
